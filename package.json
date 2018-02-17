@@ -1,8 +1,7 @@
 {
 	"name": "mean-website-ngjs",
 	"version": "1.0.0",
-	"description":
-		"A sample website with MEAN stack and notes on deployment with Heroku",
+	"description": "A sample website with MEAN stack and notes on deployment with Heroku",
 	"main": "server.js",
 	"scripts": {
 		"start": "node server.js"
@@ -11,7 +10,14 @@
 		"type": "git",
 		"url": "git+https://github.com/sassy-ankit/mean-website-NgJS.git"
 	},
-	"keywords": ["MEAN", "AngularJS", "Node", "Express", "Mongodb", "website"],
+	"keywords": [
+		"MEAN",
+		"AngularJS",
+		"Node",
+		"Express",
+		"Mongodb",
+		"website"
+	],
 	"author": "Ankitkumar Chheda",
 	"email": "ankitkumar.chheda@gmail.com",
 	"website": "www.ankitchheda.com",
@@ -21,6 +27,7 @@
 	},
 	"homepage": "https://github.com/sassy-ankit/mean-website-NgJS#readme",
 	"dependencies": {
+		"bcrypt-nodejs": "0.0.3",
 		"body-parser": "^1.18.2",
 		"cors": "^2.8.4",
 		"express": "^4.16.2",
