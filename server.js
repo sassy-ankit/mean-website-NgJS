@@ -31,7 +31,7 @@ app.use('/api', appRoutes);
 
 //Routes
 // GET "HOME"
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
 	res.sendFile(path.join(__dirname, './public/app/views/index.html'));
 });
 

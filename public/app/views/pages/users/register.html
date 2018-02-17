@@ -1,0 +1,51 @@
+<div class="page-header">
+  <h2>User Registration</h2>
+</div>
+
+<form class="form-horizontal" ng-submit="register.regUser(regData);">
+  <div class="form-group">
+    <label for="inputEmail" class="col-sm-2 control-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail" placeholder="Email" ng-model="register.regData.email">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputUsername" class="col-sm-2 control-label">Username</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="inputUsername" placeholder="Username" ng-model="register.regData.username">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword" placeholder="Password" ng-model="register.regData.password">
+    </div>
+  </div>
+  <!-- <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <div class="checkbox">
+        <label>
+          <input type="checkbox"> Remember me
+        </label>
+      </div>
+    </div>
+  </div> -->
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary">Register</button>
+    </div>
+  </div>
+</form>
+<br>
+<div class="jumbotron text-center" ng-show="register.loading">
+  <span class="glyphicon glyphicon-repeat spinner"></span>
+  <p>loading..</p>
+</div>
+<br>
+<div class="row show-hide-message" ng-show="register.successMsg">
+  <div class="alert alert-success">{{ register.successMsg}}</div>
+</div>
+<br>
+<div class="row show-hide-message" ng-show="register.errorMsg">
+  <div class="alert alert-danger">{{ register.errorMsg }}</div>
+</div>
