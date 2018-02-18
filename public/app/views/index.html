@@ -35,7 +35,7 @@
   <script src="app/services/authServices.js"></script>
 </head>
 
-<body ng-app="userApp" ng-controller="mainCtrl as main">
+<body ng-app="userApp" ng-controller="mainCtrl as main" ng-show="main.loadMe" ng-cloak>
 
   <!-- Fixed navbar -->
   <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -56,10 +56,13 @@
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="/login">Login</a>
+            <a href="/login" ng-show="!main.isLoggedIn">Login</a>
           </li>
           <li>
-            <a href="/register">Register</a>
+            <a href="/register" ng-show="!main.isLoggedIn">Register</a>
+          </li>
+          <li>
+            <a href="/profile" ng-show="main.isLoggedIn"> Welcome {{ main.username }}</a>
           </li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown
@@ -84,6 +87,9 @@
                 <a href="#">One more separated link</a>
               </li>
             </ul>
+          </li>
+          <li>
+            <a href="#" ng-click="main.logout();" ng-show="main.isLoggedIn">Logout</a>
           </li>
         </ul>
       </div>
