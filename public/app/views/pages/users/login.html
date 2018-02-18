@@ -27,7 +27,13 @@
   </div> -->
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-primary">Login</button>
+      <button type="submit" class="btn btn-success">Login</button>
+    </div>
+  </div>
+  <hr>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-primary" ng-click="main.facebook();">Login With Facebook</button>
     </div>
   </div>
 </form>
@@ -36,11 +42,12 @@
   <span class="glyphicon glyphicon-repeat spinner"></span>
   <p>loading..</p>
 </div>
-<br>
 <div class="row show-hide-message" ng-show="main.successMsg">
   <div class="alert alert-success">{{ main.successMsg}}</div>
 </div>
-<br>
 <div class="row show-hide-message" ng-show="main.errorMsg">
   <div class="alert alert-danger">{{ main.errorMsg }}</div>
+</div>
+<div class="row show-hide-message" ng-show="facebook.errorMsg">
+  <div class="alert alert-danger">{{ facebook.errorMsg }}</div>
 </div>

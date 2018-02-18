@@ -1,12 +1,13 @@
 var express = require('express');
+var app = express();
 var router = express.Router();
 var logger = require('morgan');
 var cors = require('cors');
 var path = require('path');
 var bodyParser = require('body-parser');
+var passport = require('passport');
+var social = require('./app/passport/passport')(app, passport);
 var mongoose = require('mongoose');
-
-var app = express();
 
 // Routes
 var appRoutes = require('./app/routes/api')(router);

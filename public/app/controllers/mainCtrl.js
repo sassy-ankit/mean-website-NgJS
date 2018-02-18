@@ -1,7 +1,13 @@
 angular
 	.module('mainControllers', ['authServices'])
 
-	.controller('mainCtrl', function(Auth, $timeout, $location, $rootScope) {
+	.controller('mainCtrl', function(
+		Auth,
+		$timeout,
+		$location,
+		$rootScope,
+		$window
+	) {
 		var self = this;
 		self.loadMe = false;
 
@@ -18,7 +24,18 @@ angular
 				self.isLoggedIn = false;
 				self.loadMe = true;
 			}
+			if ($location.hash() == '_=_') {
+				$location.hash(null);
+			}
 		});
+
+		self.facebook = function() {
+			$window.location =
+				$window.location.protocol +
+				'//' +
+				$window.location.host +
+				'/auth/facebook';
+		};
 
 		self.doLogin = function(loginData) {
 			self.loading = true;

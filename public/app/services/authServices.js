@@ -27,6 +27,11 @@ angular
 			}
 		};
 
+		// Auth.facebook(token);
+		authFactory.facebook = function(token) {
+			AuthToken.setToken(token);
+		};
+
 		// Auth.logout()
 		authFactory.logout = function() {
 			AuthToken.setToken();

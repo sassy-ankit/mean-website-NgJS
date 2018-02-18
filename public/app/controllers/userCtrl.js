@@ -24,4 +24,16 @@ angular
 				}
 			});
 		};
+	})
+
+	.controller('facebookCtrl', function($routeParams, Auth, $location, $window) {
+		if ($window.location.pathname == '/facebookerror') {
+			var self = this;
+			// error variable
+			self.errorMsg =
+				"Facebook account (email) doesn't match with any registered user";
+		} else {
+			Auth.facebook($routeParams.token);
+			$location.path('/profile');
+		}
 	});
