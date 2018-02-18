@@ -1,22 +1,22 @@
 angular
-	.module('userControllers', ['userServices'])
+	.module('mainControllers', ['authServices'])
 
-	.controller('regCtrl', function($http, $location, $timeout, User) {
+	.controller('mainCtrl', function(Auth, $timeout, $location) {
 		var self = this;
 
-		self.regUser = function(regData) {
+		self.doLogin = function(loginData) {
 			self.loading = true;
 			self.errorMsg = false;
 			// console.log('Registration form submitted');
 
-			User.create(self.regData).then(function(res) {
+			Auth.login(self.loginData).then(function(res) {
 				self.loading = false;
 				if (res.data.success) {
 					// Create Success Message
-					self.successMsg = res.data.message;
+					self.successMsg = res.data.message + ' & redirecting...';
 					// Redirect to Home Page
 					$timeout(function() {
-						$location.path('/home');
+						$location.path('/about');
 					}, 1500);
 				} else {
 					// Create error message
